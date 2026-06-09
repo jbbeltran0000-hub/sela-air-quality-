@@ -75,8 +75,8 @@ Overlay:
 ### Slide 3: The Data Pipeline
 **Title:** "Voice + Vision = Action"
 
-- Visual diagram showing: Community → Email → IMAP → Verification → Ledger
-- Show real examples of verified hotspots
+`- Visual diagram showing: Community → Email → IMAP → Verification → Ledger
+`- Show real examples of verified hotspots
 - Example: "Diesel odor report at 2:15 PM → Sensor #342 confirmed 3.2x spike → Ledger entry + map pulse"
 
 ### Slide 4: Medical Validation
