@@ -1,0 +1,23 @@
+# Feature Plan: Time-of-Day Multipliers for Truck Idling Hotspots
+
+## Objective
+Scale baseline risk scores dynamically based on operational shifts and freight corridor activity windows: morning peak, midday, evening peak, and night.
+
+## Design invariant
+Apply each time-of-day multiplier as proportional scaling (`adjusted_score = base_score * multiplier`) to weight exposure windows without changing the strict relative priority ranking of corridors. Preserve the baseline ranking when scores are adjusted for a shift.
+
+## Command-line and CSV workflow
+Expose the analysis options in the script's main execution flow so users can choose a dataset and analysis period when running it from a terminal. Use `argparse` for command-line options, including:
+
+- A CSV input path for a custom hotspot dataset.
+- A time period/shift selection (morning peak, midday, evening peak, or night) to select the applicable multiplier.
+
+Load the specified CSV, calculate each corridor's baseline score, apply the selected shift multiplier proportionally, and report the ranked results. Validate the selected period and input file, and retain a default/example run if no custom options are supplied.
+
+## Example invocation (proposed CLI)
+
+```bash
+python predictive_risk_analyzer_hotspots.py --input data/hotspots.csv --period morning-peak
+```
+
+The `--input` and `--period` option names are proposed; keep the command-line interface and documentation consistent with the final implementation.
