@@ -83,6 +83,12 @@ streamlit run app.py
 
 The dashboard reads `truck_idling_hotspots_report.csv` from the current directory and displays the ranked corridors, highlighting the highest-priority hotspot.
 
+### Troubleshooting
+
+- If the analyzer reports that the input CSV cannot be found, run the command from the repository root and check that `data/hotspots.csv` exists. Alternatively, pass the path to your CSV with `--input`.
+- If package installation fails, update pip with `python -m pip install --upgrade pip`, then retry `pip install -r requirements.txt`.
+- If the dashboard says no report is available, run the analyzer first and ensure it writes `truck_idling_hotspots_report.csv` in the current directory (or specify that filename with `--output`).
+
 ## Bilingual Commitment
 
 All materials (staff scripts, signage, community booklets, digital forms) are 100% English/Spanish.
